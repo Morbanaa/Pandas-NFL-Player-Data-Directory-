@@ -25,9 +25,10 @@ def menu(df):
         print("(1) Filter by position")
         print("(2) Filter by age")
         print("(3) Filter by weight class")
-        print("(4) Show full roster")
-        print("(5) Sort players by last name")
-        print("(6) Exit")
+        print("(4) Sort players by last name")
+        print("(5) Sort players by jersey number")
+        print("(6) Show full roster")
+        print("(7) Exit")
         choice = input("Choose (1-6): ")  
 
         if choice == "1":
@@ -37,10 +38,12 @@ def menu(df):
         elif choice == "3":
             filter_weight(df)
         elif choice == "4":
-            show_full_roster(df)
-        elif choice == "5":
             filter_last_name(df)
+        elif choice == "5":
+            filter_jersey(df)
         elif choice == "6":
+            show_full_roster(df)
+        elif choice == "7":
             break
         else:
             print("Not a valid input!")
@@ -49,3 +52,4 @@ def menu(df):
 if __name__ == "__main__":
     main()
     print("Have a good day!\n")
+
