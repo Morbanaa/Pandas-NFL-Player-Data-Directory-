@@ -92,3 +92,23 @@ def filter_last_name(df):
         print(f"\nFilter by {last_name}:")
         print(filter_name)
 
+# Filters dataframe based on last name user enters
+def filter_jersey(df):
+    try:
+        while True:
+            choice = int(input("\nEnter the jersey number: "))
+            if choice >= 0 and choice <= 99:
+                break
+            else:
+                print("The number must be between 0-99...")
+
+        filter_jersey = df[df["Jersey Number"] == choice]
+
+        if filter_jersey.empty:
+            print("\nNo results found...")
+        else:
+            print(f"\nFilter by jersey number: {choice}")
+            print(filter_jersey)
+        
+    except ValueError:
+        print("Not a valid entry!")
